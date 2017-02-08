@@ -4,14 +4,12 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
-import { MyNewComponentComponent } from './my-new-component/my-new-component.component';
-import { MyNewDirectiveDirective } from './my-new-directive.directive';
+import { SongsComponent } from './songs/songs.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyNewComponentComponent,
-    MyNewDirectiveDirective
+    SongsComponent
   ],
   imports: [
     BrowserModule,

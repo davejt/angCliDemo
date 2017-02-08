@@ -1,0 +1,27 @@
+<div>
+  <h2>Exercise {{randomNumber}}: {{exerciseName}}</h2>
+  <div><p>Bench press is great for you chest and triceps.</p></div>
+  <div><p>We have the following exercises for you, yeah Buddy!!</p>
+    <ol>
+      <li *ngFor="let exName of exercises">ID: {{exName.id}} NAME: {{exName.name}}</li>
+    </ol>
+    <p>New ID for Squats is: {{newId}}</p>
+  </div>
+  <div>
+    <p>So... my exercise is....</p>
+    <table appMyNewDirective>
+      <tr>
+        <td>ORIGINAL VALUE:</td>
+        <td>NEW VALUE:</td>
+        <td>NAME:</td>
+      </tr>
+      <tr>
+        <td>{{myExercise.id}}</td>
+        <td>{{newValue}}</td>
+        <td>{{myExercise.name}}</td>
+      </tr>
+    </table>
+  </div>
+  <div *ngIf="exercises.length == 3"><p>There are THREE exercises BOOM!</p></div>
+</div>
+

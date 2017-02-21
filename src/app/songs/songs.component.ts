@@ -9,14 +9,18 @@ import { SpotifySongService } from '../spotify-song.service';
   providers: [ SpotifySongService ]
 })
 export class SongsComponent implements OnInit {
-
+  errorMessage: string;
   songs: Songs[];
+  mode = 'observable';
 
 
   constructor(private songService: SpotifySongService) { }
 
-  getSongs() :void {
-  	this.songService.getSongs().then(songs => this.songs = songs);
+  getSongs() {
+  	this.songService.getSongs()
+        .subscribe(
+            songs => this.songs = songs,
+            error => this.errorMessage = <any>error);
   }
 
   ngOnInit() {

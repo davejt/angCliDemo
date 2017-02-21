@@ -14,19 +14,30 @@ export class SpotifySongService {
 	private spotifyUrl = 'https://jsonplaceholder.typicode.com/users';
 
 	constructor (private http: Http) {}
-
+/*
 	getSongs(): Observable<Songs[]> {
-
 		return this.http.get(this.spotifyUrl)
 			.map(res => res.json())
 			.catch(this.handleError);
 	}
 
+*/
+	getSongs (): Observable<Songs[]> {
+		return this.http.get(this.spotifyUrl)
+            .map(this.extractData)
+            .catch(this.handleError);
+	}
+/*
 	private extractData(res: Response) {
 		let body = res.json();
 		return body.data || {};
 	}
+*/
 
+	private extractData(res: Response) {
+		let body = res.json();
+		return body || [];
+	}
 	private handleError(error: Response | any) {
 		// In a real world app, we might use a remote logging infrastructure
 		let errMsg: string;

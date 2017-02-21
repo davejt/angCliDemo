@@ -3,6 +3,7 @@ import { Songs } from '../songs';
 import { SpotifySongService } from '../spotify-song.service';
 
 @Component({
+  moduleId: module.id,
   selector: 'app-songs',
   templateUrl: './songs.component.html',
   styleUrls: ['./songs.component.css'],

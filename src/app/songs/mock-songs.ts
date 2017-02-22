@@ -1,4 +1,4 @@
-import { Songs } from '../Songs';
+import { Songs } from './Songs';
 
 export const SONGS: Songs[] = [
   {id: 11, title: 'Mr. Nice'},
